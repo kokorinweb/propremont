@@ -26,7 +26,7 @@ export const COMPANY = {
   whatsapp: "https://wa.me/74230000000",
   parking: "Парковка рядом с ТЦ",
   /** Заменить на реальные ориентиры (вход, лестница, вывеска), когда их проверят на месте. */
-  howToFind: ["Зайдите в ТЦ «Луговая»", "Поднимитесь на 2 этаж", "Бутик 221 — «Проремонт»"],
+  howToFind: ["Зайдите в ТЦ «Луговая»", "Поднимитесь на 2 этаж", "Бутик 221, вывеска «Проремонт»"],
   maps: {
     yandex: "https://yandex.ru/maps/?text=" + encodeURIComponent("Владивосток, улица Луговая, 21а"),
     twoGis: "https://2gis.ru/vladivostok/search/" + encodeURIComponent("Луговая 21а"),

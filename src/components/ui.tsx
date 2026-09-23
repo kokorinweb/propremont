@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
 export const button = {
-  base: "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 text-[15px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
-  primary: "bg-brand text-white hover:bg-brand-dark",
-  light: "bg-white text-brand-deep hover:bg-brand-soft",
-  outlineLight: "border border-screen-ink/30 text-screen-ink hover:border-screen-ink/70 hover:bg-screen-ink/5",
-  outline: "border border-line bg-white text-ink hover:border-brand hover:text-brand",
+  base: "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-6 text-[15px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+  primary: "bg-ink text-white hover:bg-ink-soft",
+  outline: "border border-ink/70 text-ink hover:bg-ink hover:text-white",
+  light: "bg-white text-ink hover:bg-esd",
+  outlineLight: "border border-night-ink/35 text-night-ink hover:border-night-ink hover:bg-night-ink/5",
 };
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -24,9 +24,9 @@ export function SectionHeading({
   aside?: ReactNode;
 }) {
   return (
-    <div className="mb-8 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
+    <div className="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
       <div className="max-w-2xl">
-        <h2 id={id} className="text-3xl font-bold tracking-[-0.025em] sm:text-[2.6rem] sm:leading-[1.1]">
+        <h2 id={id} className="display text-[2.75rem] sm:text-6xl">
           {title}
         </h2>
         {lead && <p className="mt-4 text-base text-pretty text-ink-soft sm:text-lg">{lead}</p>}
@@ -34,10 +34,4 @@ export function SectionHeading({
       {aside}
     </div>
   );
-}
-
-/** Точка статуса прибора: мятная — исправно, янтарная — требует ремонта. */
-export function StatusDot({ tone = "ok", className = "" }: { tone?: "ok" | "fault" | "idle"; className?: string }) {
-  const color = tone === "ok" ? "bg-mint" : tone === "fault" ? "bg-amber" : "bg-screen-soft/50";
-  return <span aria-hidden className={`inline-block size-2 shrink-0 rounded-full ${color} ${className}`} />;
 }

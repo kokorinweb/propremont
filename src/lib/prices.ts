@@ -5,7 +5,7 @@
  */
 
 export const BRANDS = [
-  { id: "apple", name: "Apple", models: "iPhone 11 — iPhone 17 Pro Max" },
+  { id: "apple", name: "Apple", models: "iPhone 11–17 Pro Max" },
   { id: "samsung", name: "Samsung", models: "Galaxy A, S, Z" },
   { id: "xiaomi", name: "Xiaomi", models: "Xiaomi, Redmi, POCO" },
   { id: "honor", name: "Honor", models: "Honor X, Magic, 90–400" },
@@ -18,7 +18,7 @@ export const SERVICES = [
   {
     id: "display",
     title: "Замена дисплея",
-    note: "Оригинал или копия — на выбор",
+    note: "Оригинал или копия на выбор",
     time: "от 40 мин",
     warranty: "до 6 мес.",
   },
@@ -128,8 +128,9 @@ export const PRICES: Record<BrandId, Record<ServiceId, number>> = {
 
 export const OTHER_BRANDS = "Realme, Tecno, Infinix, Google Pixel, OnePlus, Vivo";
 
+/** Разряды через неразрывный пробел: узкого (U+202F) нет в узком гротеске этикеток. */
 export function formatPrice(value: number): string {
-  return `${value.toLocaleString("ru-RU").replace(/ /g, " ")} ₽`;
+  return `${value.toLocaleString("ru-RU").replace(/[\u00a0\u202f]/g, "\u00a0")}\u00a0₽`;
 }
 
 export function getBrand(id: string) {
@@ -165,4 +166,32 @@ export const DIAGNOSTICS_INFO = { time: "15 мин", price: 0 } as const;
 /** Моноширинный — только для показаний: там, где есть цифры. Слова остаются гротеском. */
 export function isReading(value: string): boolean {
   return /\d/.test(value);
+}
+
+const BRAND_CODES: Record<BrandId, string> = {
+  apple: "APL",
+  samsung: "SAM",
+  xiaomi: "XMI",
+  honor: "HON",
+  huawei: "HUA",
+};
+
+const SERVICE_CODES: Record<ServiceId, string> = {
+  display: "DSP",
+  battery: "BAT",
+  port: "USB",
+  "camera-glass": "CAM",
+  back: "BCK",
+  water: "H2O",
+  speaker: "SPK",
+  data: "DAT",
+};
+
+/** Код оценки для штрихкода на этикетке: бренд, ремонт и цена — например PR-APL-DSP-4900. */
+export function quoteCode(brand: BrandId, service: ServiceId | null, price: number): string {
+  return `PR-${BRAND_CODES[brand]}-${service ? SERVICE_CODES[service] : "DIA"}-${price}`;
+}
+
+export function priceListCode(brand: BrandId): string {
+  return `PRICE-${BRAND_CODES[brand]}`;
 }

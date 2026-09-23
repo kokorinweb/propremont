@@ -2,7 +2,7 @@ import { MessageCircle, Phone, Send } from "lucide-react";
 import { COMPANY } from "@/lib/company";
 
 const secondary =
-  "flex min-h-12 items-center justify-center gap-1.5 rounded-xl border border-line text-sm font-semibold text-ink";
+  "flex min-h-12 items-center justify-center gap-1.5 rounded-[10px] border border-ink/20 text-sm font-semibold text-ink";
 
 /** Связь в одно касание на телефоне: закреплена снизу, на широких экранах не нужна. */
 export function MobileBar() {
@@ -13,17 +13,17 @@ export function MobileBar() {
     >
       <a
         href={COMPANY.phoneHref}
-        className="flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand text-sm font-semibold text-white"
+        className="flex min-h-12 items-center justify-center gap-2 rounded-[10px] bg-ink text-sm font-semibold text-white"
       >
         <Phone className="size-4" aria-hidden />
         Позвонить
       </a>
       <a href={COMPANY.telegram} className={secondary}>
-        <Send className="size-4 text-brand" aria-hidden />
+        <Send className="size-4" aria-hidden />
         Telegram
       </a>
       <a href={COMPANY.whatsapp} className={secondary}>
-        <MessageCircle className="size-4 text-brand" aria-hidden />
+        <MessageCircle className="size-4" aria-hidden />
         WhatsApp
       </a>
     </nav>

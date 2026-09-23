@@ -1,69 +1,54 @@
-import { isReading } from "@/lib/prices";
-import { Container, StatusDot } from "./ui";
+import { Container } from "./ui";
 
-/** Правила мастерской как строки показаний: пункт, пояснение, значение. */
+/** Условия мастерской: строка условия и пояснение к ней. */
 const RULES = [
   {
-    title: "Гарантия",
-    text: "Талон на бумаге и копия в мессенджере. Покрывает деталь и работу.",
-    value: "до 6 мес.",
+    value: "Гарантия до 6\u00a0месяцев",
+    text: "Выдаём талон на бумаге и присылаем копию в мессенджер. Гарантия покрывает деталь и работу.",
   },
   {
-    title: "Запчасти",
-    text: "Оригинал или копия. Честно говорим разницу — в цене, яркости экрана и сроке гарантии.",
-    value: "на выбор",
+    value: "Запчасти на выбор",
+    text: "Оригинал или копия. Объясняем разницу в цене, яркости экрана и сроке гарантии.",
   },
   {
-    title: "Ремонт при вас",
-    text: "Рабочее место за стеклом. Старую деталь отдаём вам.",
-    value: "от 30 мин",
+    value: "Ремонт при вас",
+    text: "Мастер работает за стеклом. Старую деталь отдаём вам.",
   },
   {
-    title: "Данные",
-    text: "Для большинства ремонтов пароль не нужен. Перенесём и восстановим, если попросите.",
-    value: "сохраняем",
+    value: "Данные остаются вашими",
+    text: "Для большинства ремонтов пароль не нужен. Если попросите, перенесём и восстановим данные.",
   },
   {
-    title: "Оплата",
+    value: "Оплата любым способом",
     text: "Карта, наличные, перевод или QR-код.",
-    value: "любым способом",
   },
   {
-    title: "Доставка и выезд",
-    text: "Заберём телефон или отремонтируем на дому.",
-    value: "по городу",
+    value: "Доставка и выезд",
+    text: "Заберём телефон или отремонтируем его у вас дома.",
   },
 ];
 
 export function Trust() {
   return (
-    <section aria-labelledby="trust-title" className="py-20 md:py-28">
+    <section aria-labelledby="trust-title" className="bg-white py-20 md:py-28">
       <Container className="grid grid-cols-1 gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <h2 id="trust-title" className="text-3xl font-bold tracking-[-0.025em] sm:text-[2.6rem] sm:leading-[1.1]">
-            Что входит в каждый ремонт
+          <h2 id="trust-title" className="display text-[2.75rem] sm:text-6xl">
+            Условия ремонта
           </h2>
           <p className="mt-4 text-base text-pretty text-ink-soft sm:text-lg">
-            Не акция, а правила мастерской: одинаковые для стекла камеры и для ремонта после воды.
+            Эти условия действуют для любого ремонта, от стекла камеры до восстановления после воды.
           </p>
         </div>
 
-        <dl className="divide-y divide-line rounded-2xl ring-1 ring-line lg:col-span-8">
+        <dl className="border-t-2 border-ink lg:col-span-8">
           {RULES.map((rule) => (
             <div
-              key={rule.title}
-              className="grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4 gap-y-1.5 px-5 py-5 sm:px-6 md:grid-cols-[12rem_minmax(0,1fr)_auto] md:gap-x-6"
+              key={rule.value}
+              className="grid grid-cols-1 gap-x-10 gap-y-1.5 border-b border-line py-5 md:grid-cols-[19.5rem_minmax(0,1fr)] md:items-baseline"
             >
-              <dt className="flex items-center gap-3 font-semibold">
-                <StatusDot tone="ok" className="ring-1 ring-brand/25" />
-                {rule.title}
-              </dt>
-              <dd
-                className={`text-right text-brand md:order-last ${isReading(rule.value) ? "readout" : "text-sm font-medium"}`}
-              >
-                {rule.value}
-              </dd>
-              <dd className="col-span-2 pl-5 text-ink-soft md:col-span-1 md:pl-0">{rule.text}</dd>
+              <dt className="display text-3xl">{rule.value}</dt>
+              <dd className="text-ink-soft">{rule.text}</dd>
             </div>
           ))}
         </dl>

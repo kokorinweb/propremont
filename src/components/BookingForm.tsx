@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { ArrowRight, CircleCheck, LoaderCircle } from "lucide-react";
+import { useState, type FormEvent, type ReactNode } from "react";
+import { ArrowRight, LoaderCircle } from "lucide-react";
 import { COMPANY } from "@/lib/company";
 import { BRANDS, DIAGNOSTICS_INFO, formatPrice, getService, PRICES, SERVICES, type BrandId } from "@/lib/prices";
 import {
@@ -12,6 +12,7 @@ import {
   type BrandChoice,
   type ServiceChoice,
 } from "@/lib/request";
+import { Barcode } from "./Barcode";
 import { useBooking } from "./BookingContext";
 import { button } from "./ui";
 
@@ -19,7 +20,7 @@ type Field = "name" | "phone" | "brand" | "consent";
 type Status = { kind: "idle" } | { kind: "sending" } | { kind: "sent"; number: string } | { kind: "failed"; message: string };
 
 const input =
-  "h-12 w-full rounded-xl border bg-white px-4 text-base text-ink placeholder:text-ink-mute transition-colors duration-200 focus:border-brand focus:ring-2 focus:ring-brand/15 focus:outline-none aria-[invalid=true]:border-danger";
+  "h-12 w-full rounded-[8px] border bg-white px-4 text-base text-ink placeholder:text-ink-mute transition-colors duration-200 focus:border-ink focus:ring-3 focus:ring-esd/60 focus:outline-none aria-[invalid=true]:border-danger";
 
 export function BookingForm() {
   const { formBrand, formService, setFormBrand, setFormService } = useBooking();
@@ -75,15 +76,19 @@ export function BookingForm() {
   }
 
   if (status.kind === "sent") {
+    // Штрихкод кодирует латиницу: «П-593256» печатается как P593256.
+    const code = status.number.replace("П-", "P");
     return (
-      <div className="flex min-h-[28rem] flex-col items-start justify-center rounded-2xl bg-white p-6 text-ink sm:p-10">
-        <CircleCheck className="size-10 text-brand" strokeWidth={1.5} aria-hidden />
-        <h3 className="mt-5 text-2xl font-bold tracking-[-0.02em]" role="status">
-          Заявка <span className="readout">{status.number}</span> принята
-        </h3>
-        <p className="mt-3 max-w-md text-ink-soft">
-          Перезвоним в рабочее время — {COMPANY.hours.toLowerCase()}. Номер заявки пригодится, если
-          будете звонить сами.
+      <div className="label p-6 text-ink sm:p-9" role="status">
+        <p className="field text-ink-mute">Заявка принята</p>
+        <p className="display mt-2 text-6xl sm:text-7xl">{status.number}</p>
+        <div className="mt-6 border-t border-dashed border-ink/25 pt-5">
+          <Barcode value={code} height={48} module={2} />
+          <p className="readout mt-1 text-xs tracking-[0.12em]">{code}</p>
+        </div>
+        <p className="mt-6 max-w-md text-ink-soft">
+          Мы перезвоним в рабочее время, {COMPANY.hours.toLowerCase()}. Назовите номер заявки, если будете
+          звонить сами.
         </p>
         <button type="button" onClick={reset} className={`${button.base} ${button.outline} mt-8`}>
           Отправить ещё одну
@@ -95,7 +100,12 @@ export function BookingForm() {
   const sending = status.kind === "sending";
 
   return (
-    <form onSubmit={submit} noValidate className="relative rounded-2xl bg-white p-5 text-ink sm:p-8">
+    <form onSubmit={submit} noValidate className="label relative p-5 text-ink sm:p-8">
+      <header className="mb-6 flex items-baseline justify-between gap-4 border-b-2 border-ink pb-3">
+        <span className="display text-2xl">Заявка на ремонт</span>
+        <span className="field text-ink-mute">{COMPANY.name}</span>
+      </header>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <FieldBox id="booking-name" label="Как к вам обращаться" error={errors.name}>
           <input
@@ -107,7 +117,7 @@ export function BookingForm() {
             onChange={(e) => setName(e.target.value)}
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "booking-name-error" : undefined}
-            className={`${input} ${errors.name ? "" : "border-line"}`}
+            className={`${input} ${errors.name ? "" : "border-ink/25"}`}
           />
         </FieldBox>
 
@@ -123,11 +133,11 @@ export function BookingForm() {
             onChange={(e) => setPhone(e.target.value)}
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? "booking-phone-error" : undefined}
-            className={`${input} tabular-nums ${errors.phone ? "" : "border-line"}`}
+            className={`${input} tabular-nums ${errors.phone ? "" : "border-ink/25"}`}
           />
         </FieldBox>
 
-        <FieldBox id="booking-brand" label="Телефон какой марки" error={errors.brand}>
+        <FieldBox id="booking-brand" label="Марка телефона" error={errors.brand}>
           <select
             id="booking-brand"
             name="brand"
@@ -135,7 +145,7 @@ export function BookingForm() {
             onChange={(e) => setFormBrand(e.target.value as BrandChoice)}
             aria-invalid={Boolean(errors.brand)}
             aria-describedby={errors.brand ? "booking-brand-error" : undefined}
-            className={`${input} select ${errors.brand ? "" : "border-line"} ${formBrand ? "" : "text-ink-mute"}`}
+            className={`${input} select ${errors.brand ? "" : "border-ink/25"} ${formBrand ? "" : "text-ink-mute"}`}
           >
             <option value="" disabled>
               Выберите
@@ -155,7 +165,7 @@ export function BookingForm() {
             name="service"
             value={formService}
             onChange={(e) => setFormService(e.target.value as ServiceChoice)}
-            className={`${input} select border-line`}
+            className={`${input} select border-ink/25`}
           >
             <option value={DIAGNOSTICS.id}>{DIAGNOSTICS.title}</option>
             {SERVICES.map((service) => (
@@ -167,15 +177,15 @@ export function BookingForm() {
         </FieldBox>
 
         <fieldset className="sm:col-span-2">
-          <legend className="mb-2 text-sm font-medium">Как с вами связаться</legend>
-          <div className="grid grid-cols-3 gap-1 rounded-full bg-mist p-1 ring-1 ring-line">
+          <legend className="field mb-2 text-ink-mute">Как с вами связаться</legend>
+          <div className="grid grid-cols-3 gap-1 rounded-[10px] bg-ground p-1 ring-1 ring-line">
             {CONTACT_METHODS.map((method) => {
               const checked = method.id === contact;
               return (
                 <label
                   key={method.id}
-                  className={`flex min-h-11 cursor-pointer items-center justify-center rounded-full px-2 text-sm font-medium transition-colors duration-200 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-1 has-[:focus-visible]:outline-brand ${
-                    checked ? "bg-brand text-white" : "text-ink-soft hover:text-ink"
+                  className={`flex min-h-11 cursor-pointer items-center justify-center rounded-[7px] px-2 text-sm font-semibold transition-colors duration-200 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-1 has-[:focus-visible]:outline-ink ${
+                    checked ? "bg-ink text-white" : "text-ink-soft hover:text-ink"
                   }`}
                 >
                   <input
@@ -205,11 +215,11 @@ export function BookingForm() {
             onChange={(e) => setConsent(e.target.checked)}
             aria-invalid={Boolean(errors.consent)}
             aria-describedby={errors.consent ? "booking-consent-error" : undefined}
-            className="mt-0.5 size-5 shrink-0 cursor-pointer rounded accent-brand"
+            className="mt-0.5 size-5 shrink-0 cursor-pointer rounded accent-ink"
           />
           <span>
             Согласен на обработку персональных данных по{" "}
-            <a href="/privacy" className="text-brand underline" target="_blank">
+            <a href="/privacy" className="font-medium text-ink underline" target="_blank">
               политике конфиденциальности
             </a>
           </span>
@@ -247,7 +257,7 @@ export function BookingForm() {
       </div>
 
       {status.kind === "failed" && (
-        <p role="alert" className="mt-4 rounded-xl bg-danger/8 px-4 py-3 text-sm text-danger">
+        <p role="alert" className="mt-4 rounded-[8px] bg-danger/8 px-4 py-3 text-sm text-danger">
           {status.message}
         </p>
       )}
@@ -255,20 +265,10 @@ export function BookingForm() {
   );
 }
 
-function FieldBox({
-  id,
-  label,
-  error,
-  children,
-}: {
-  id: string;
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-}) {
+function FieldBox({ id, label, error, children }: { id: string; label: string; error?: string; children: ReactNode }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-sm font-medium">
+      <label htmlFor={id} className="field mb-2 block text-ink-mute">
         {label}
       </label>
       {children}
@@ -294,14 +294,14 @@ function Estimate({ brand, service }: { brand: BrandChoice | ""; service: Servic
     title = info.title;
     reading = `от ${formatPrice(PRICES[brand as BrandId][info.id])} · ${info.time}`;
   } else if (brand === OTHER_BRAND.id) {
-    title = `${info.title} — цену назовём по модели`;
+    title = `${info.title}, цену назовём по модели`;
   }
 
   if (!title) return null;
   return (
-    <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-dashed border-line pt-4 text-sm text-ink-soft">
+    <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 border-t border-dashed border-ink/25 pt-4 text-sm text-ink-soft">
       <span>Ориентировочно:</span>
-      <span className="text-ink">{title}</span>
+      <span className="font-medium text-ink">{title}</span>
       {reading && <span className="readout text-ink">{reading}</span>}
     </p>
   );

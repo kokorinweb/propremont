@@ -10,9 +10,10 @@ import { button, Container } from "./ui";
 export function Header() {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const toggle = () => setOpen((value) => !value);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line/70 bg-white">
+    <header className="sticky top-0 z-40 border-b border-line bg-white">
       <Container className="flex h-16 items-center gap-6 md:h-[72px]">
         <a href="/#top" aria-label={`${COMPANY.name}, на главную`} onClick={close}>
           <Logo />
@@ -20,17 +21,14 @@ export function Header() {
 
         <nav className="ml-auto hidden items-center gap-7 text-[15px] lg:flex" aria-label="Разделы">
           {NAV.map((link) => (
-            <a key={link.href} href={link.href} className="text-ink-soft transition-colors hover:text-brand">
+            <a key={link.href} href={link.href} className="font-medium text-ink-soft transition-colors hover:text-ink">
               {link.label}
             </a>
           ))}
         </nav>
 
-        <a
-          href={COMPANY.phoneHref}
-          className="ml-auto hidden flex-col items-end leading-tight md:flex lg:ml-0"
-        >
-          <span className="text-[15px] font-semibold whitespace-nowrap">{COMPANY.phone}</span>
+        <a href={COMPANY.phoneHref} className="ml-auto hidden flex-col items-end leading-tight md:flex lg:ml-0">
+          <span className="text-[15px] font-semibold whitespace-nowrap tabular-nums">{COMPANY.phone}</span>
           <span className="text-xs text-ink-mute">{COMPANY.hours}</span>
         </a>
 
@@ -41,36 +39,25 @@ export function Header() {
           </a>
         </div>
 
-        <div className="ml-auto flex items-center gap-1 sm:ml-0 md:hidden">
+        <div className="ml-auto flex items-center gap-1 sm:ml-0 lg:hidden">
           <a
             href={COMPANY.phoneHref}
-            className="grid size-11 place-items-center rounded-full text-brand hover:bg-mist"
+            className="grid size-11 place-items-center rounded-[10px] hover:bg-ground md:hidden"
             aria-label={`Позвонить: ${COMPANY.phone}`}
           >
             <Phone className="size-5" />
           </a>
           <button
             type="button"
-            className="grid size-11 place-items-center rounded-full hover:bg-mist lg:hidden"
+            className="grid size-11 place-items-center rounded-[10px] hover:bg-ground"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Закрыть меню" : "Открыть меню"}
-            onClick={() => setOpen((value) => !value)}
+            onClick={toggle}
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
-
-        <button
-          type="button"
-          className="hidden size-11 place-items-center rounded-full hover:bg-mist md:grid lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
       </Container>
 
       {open && (
@@ -81,7 +68,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={close}
-                className="border-b border-line/60 py-3.5 text-lg font-medium last:border-0"
+                className="border-b border-line/70 py-3.5 text-lg font-medium last:border-0"
               >
                 {link.label}
               </a>

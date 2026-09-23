@@ -20,12 +20,12 @@ export default function PrivacyPage() {
       <Header />
       <main className="py-16 md:py-24">
         <Container className="max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-[-0.03em] sm:text-5xl">Политика конфиденциальности</h1>
+          <h1 className="display text-5xl sm:text-7xl">Политика конфиденциальности</h1>
           <div className="mt-10 space-y-8 text-ink-soft [&_h2]:mb-3 [&_h2]:text-xl [&_h2]:font-semibold [&_h2]:text-ink">
             <section>
               <h2>1. Кто обрабатывает данные</h2>
               <p>
-                Оператор — {legal.entity} (ИНН {legal.inn}, ОГРНИП {legal.ogrnip}), сервисный центр «{COMPANY.name}»,
+                Оператор: {legal.entity} (ИНН {legal.inn}, ОГРНИП {legal.ogrnip}), сервисный центр «{COMPANY.name}»,
                 адрес: {FULL_ADDRESS}. Связь: {COMPANY.phone}, {COMPANY.email}.
               </p>
             </section>
@@ -46,7 +46,7 @@ export default function PrivacyPage() {
             <section>
               <h2>4. Основание и срок</h2>
               <p>
-                Основание — ваше согласие, которое вы даёте галочкой в форме. Данные храним не дольше, чем нужно для
+                Основание: ваше согласие, которое вы даёте галочкой в форме. Данные храним не дольше, чем нужно для
                 выполнения заявки и гарантийных обязательств, и удаляем по вашему запросу.
               </p>
             </section>
@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             <section>
               <h2>6. Ваши права</h2>
               <p>
-                Вы можете узнать, какие данные о вас хранятся, исправить их или отозвать согласие — напишите на{" "}
+                Вы можете узнать, какие данные о вас хранятся, исправить их или отозвать согласие. Напишите на{" "}
                 {COMPANY.email} или позвоните {COMPANY.phone}.
               </p>
             </section>

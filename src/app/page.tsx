@@ -11,7 +11,7 @@ import { Prices } from "@/components/Prices";
 import { Process } from "@/components/Process";
 import { Reviews } from "@/components/Reviews";
 import { Trust } from "@/components/Trust";
-import { COMPANY, siteUrl } from "@/lib/company";
+import { COMPANY, SITE_IS_DEMO, siteUrl } from "@/lib/company";
 import { FAQ } from "@/lib/faq";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <div className="pb-[76px] md:pb-0">
         <a
           href="#main"
-          className="sr-only z-50 rounded-xl bg-brand px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+          className="sr-only z-50 rounded-[10px] bg-ink px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
         >
           Перейти к содержанию
         </a>
@@ -39,7 +39,8 @@ export default function Home() {
         <Footer />
       </div>
       <MobileBar />
-      <StructuredData />
+      {/* Разметка с заглушками (телефон, адрес) в поиск и карты не уходит. */}
+      {!SITE_IS_DEMO && <StructuredData />}
     </BookingProvider>
   );
 }

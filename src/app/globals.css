@@ -1,45 +1,48 @@
 @import "tailwindcss";
 
 @theme {
-  /* Нейтральные: холодные, подкрашены бирюзой, без чистого серого. */
-  --color-ink: #0b1a1c;
-  --color-ink-soft: #435659;
-  --color-ink-mute: #5f7275;
-  --color-line: #d6e1e1;
-  --color-mist: #eef4f4;
+  /* Нейтральные: чуть подкрашены в сторону розового, без чистого серого. */
+  --color-ink: #171315;
+  --color-ink-soft: #4b4448;
+  --color-ink-mute: #6b6368;
+  --color-line: #d8d4d6;
+  --color-ground: #eeedef;
+  --color-liner: #e2dfe1;
 
-  /* Поле «экрана прибора» и его производные. */
-  --color-brand: #0e4a4f;
-  --color-brand-dark: #0a3a3e;
-  --color-brand-deep: #072b2e;
-  --color-brand-soft: #d8eaea;
-  --color-screen-ink: #e4f1f0;
-  --color-screen-soft: #9dbdbb;
-  --color-screen-line: rgb(228 241 240 / 0.12);
+  /* Розовый антистатического пакета — поле первого и последнего экрана. */
+  --color-esd: #f5a3c0;
+  --color-esd-deep: #ec84a9;
+  --color-esd-ink: #5b2a3c;
 
-  /* Сигналы статуса: мятный — исправно, янтарный — требует ремонта. */
-  --color-mint: #6fe3c6;
-  --color-amber: #f0a43a;
-  --color-amber-ink: #b86e0c;
+  /* Двойная красная линия зиплока, жёлтый ESD-стикер для предупреждений. */
+  --color-zip: #e0322e;
+  --color-caution: #ffd23f;
   --color-danger: #b42318;
 
-  --font-sans: var(--font-geologica), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  /* Сплошные чёрные поля: запись и подвал. */
+  --color-night: #151114;
+  --color-night-ink: #f4eff2;
+  --color-night-soft: #b9aeb4;
+  --color-night-line: rgb(244 239 242 / 0.14);
+
+  --font-sans: var(--font-golos), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-fira-xcond), "Arial Narrow", ui-sans-serif, sans-serif;
+  --font-mono: var(--font-fira-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root {
   color-scheme: light;
-  accent-color: var(--color-brand);
-  scrollbar-color: color-mix(in oklab, var(--color-brand) 55%, white) var(--color-mist);
+  accent-color: var(--color-ink);
+  scrollbar-color: color-mix(in oklab, var(--color-ink) 45%, white) var(--color-ground);
 }
 
 html {
   scroll-behavior: smooth;
   /* Якоря и фокус не прячутся под закреплённой шапкой. */
   scroll-padding-top: 5.5rem;
-  -webkit-tap-highlight-color: rgb(14 74 79 / 0.12);
+  -webkit-tap-highlight-color: rgb(245 163 192 / 0.35);
   touch-action: manipulation;
 }
 
@@ -51,7 +54,7 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background-color: var(--color-ground);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -61,28 +64,27 @@ body {
 h1,
 h2,
 h3 {
-  font-variation-settings: "SHRP" 70;
   text-wrap: balance;
 }
 
 ::selection {
-  background: var(--color-mint);
-  color: var(--color-brand-deep);
+  background: var(--color-esd);
+  color: var(--color-ink);
 }
 
 input,
 select,
 textarea {
-  caret-color: var(--color-brand);
+  caret-color: var(--color-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-brand);
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
 }
 
 .on-dark :focus-visible {
-  outline-color: var(--color-mint);
+  outline-color: var(--color-esd);
 }
 
 a {
@@ -90,65 +92,107 @@ a {
   text-decoration-thickness: 1px;
 }
 
-/* Показания прибора: цифры одной ширины, чтобы столбцы цен не «прыгали». */
+/* Голос этикетки: узкий гротеск прописными — заголовки и цены. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  /* Не плотнее: бреве «Й» и выносной элемент «Д» соседних строк иначе сталкиваются. */
+  line-height: 0.96;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Название поля на этикетке: «ТЕЛЕФОН», «СРОК». */
+.field {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+/* Показания: коды, сроки, числа — цифры одной ширины. */
 .readout {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.01em;
 }
 
-/* ── Сигнатура: линия сканирования по окну показаний ─────────────────
-   Содержимое видно всегда; линия лишь пробегает поверх при смене выбора. */
-
-@keyframes scan-sweep {
-  from {
-    translate: 0 -12%;
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  to {
-    translate: 0 100%;
-    opacity: 0;
-  }
+/* Термоэтикетка: лежит на поверхности, поэтому тень, а не рамка. */
+.label {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow:
+    0 1px 2px rgb(23 19 21 / 0.08),
+    0 12px 28px -14px rgb(23 19 21 / 0.35);
 }
 
-.scan {
+/* Верхний край пакета: двойная красная линия зиплока. */
+.zip {
   position: relative;
-  overflow: hidden;
 }
-
-.scan::after {
+.zip::before {
   content: "";
   position: absolute;
-  inset: 0 0 auto;
-  height: 38%;
+  inset: 14px 0 auto;
+  height: 8px;
+  background: linear-gradient(var(--color-zip) 0 2px, transparent 2px 6px, var(--color-zip) 6px 8px);
+  opacity: 0.85;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, rgb(111 227 198 / 0.14) 85%, var(--color-mint) 99%, transparent);
-  animation: scan-sweep 0.9s var(--ease-out-expo) both;
 }
 
-@keyframes settle {
+/* ── Сигнатура: этикетка выезжает из щели принтера ────────────────────
+   Показывается только после выбора посетителя; в покое этикетка уже напечатана. */
+
+@keyframes feed {
   from {
-    filter: blur(3px);
-    opacity: 0.35;
+    transform: translateY(-100%);
   }
   to {
-    filter: none;
-    opacity: 1;
+    transform: none;
   }
 }
 
-.settle {
-  animation: settle 0.45s var(--ease-out-expo) both;
+.feed {
+  animation: feed 0.75s var(--ease-out-expo) both;
 }
 
-/* Стрелка у выпадающих списков в цвет бренда вместо системной. */
+/* Перфорация между этикетками на рулоне. */
+.perforated:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-color: rgb(23 19 21 / 0.28);
+  border-style: dashed;
+  border-width: 0;
+  left: 12px;
+  right: 12px;
+  bottom: -7px;
+  border-top-width: 1px;
+}
+@media (min-width: 768px) {
+  .perforated:not(:last-child)::after {
+    left: auto;
+    right: -7px;
+    top: 12px;
+    bottom: 12px;
+    border-top-width: 0;
+    border-left-width: 1px;
+  }
+}
+
+/* Точечная выноска между названием и ценой, как в чеке. */
+.leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 2px dotted rgb(23 19 21 / 0.28);
+  transform: translateY(-0.3em);
+}
+
+/* Стрелка у выпадающих списков вместо системной. */
 .select {
   appearance: none;
   padding-right: 2.75rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230e4a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 8 5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23171315' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 8 5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   background-size: 18px;
@@ -177,11 +221,7 @@ details[open] .faq-icon {
   html {
     scroll-behavior: auto;
   }
-  .scan::after,
-  .settle {
+  .feed {
     animation: none;
-  }
-  .scan::after {
-    display: none;
   }
 }
