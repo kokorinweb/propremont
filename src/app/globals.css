@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  /* Нейтральные: холодные, подкрашены бирюзой, без чистого серого. */
+  --color-ink: #0b1a1c;
+  --color-ink-soft: #435659;
+  --color-ink-mute: #5f7275;
+  --color-line: #d6e1e1;
+  --color-mist: #eef4f4;
+
+  /* Поле «экрана прибора» и его производные. */
+  --color-brand: #0e4a4f;
+  --color-brand-dark: #0a3a3e;
+  --color-brand-deep: #072b2e;
+  --color-brand-soft: #d8eaea;
+  --color-screen-ink: #e4f1f0;
+  --color-screen-soft: #9dbdbb;
+  --color-screen-line: rgb(228 241 240 / 0.12);
+
+  /* Сигналы статуса: мятный — исправно, янтарный — требует ремонта. */
+  --color-mint: #6fe3c6;
+  --color-amber: #f0a43a;
+  --color-amber-ink: #b86e0c;
+  --color-danger: #b42318;
+
+  --font-sans: var(--font-geologica), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  color-scheme: light;
+  accent-color: var(--color-brand);
+  scrollbar-color: color-mix(in oklab, var(--color-brand) 55%, white) var(--color-mist);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Якоря и фокус не прячутся под закреплённой шапкой. */
+  scroll-padding-top: 5.5rem;
+  -webkit-tap-highlight-color: rgb(14 74 79 / 0.12);
+  touch-action: manipulation;
+}
+
+/* На телефоне снизу закреплена панель связи — фокус не должен уходить под неё. */
+@media (max-width: 767px) {
+  html {
+    scroll-padding-bottom: 5.5rem;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-variation-settings: "SHRP" 70;
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-mint);
+  color: var(--color-brand-deep);
+}
+
+input,
+select,
+textarea {
+  caret-color: var(--color-brand);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.on-dark :focus-visible {
+  outline-color: var(--color-mint);
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/* Показания прибора: цифры одной ширины, чтобы столбцы цен не «прыгали». */
+.readout {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* ── Сигнатура: линия сканирования по окну показаний ─────────────────
+   Содержимое видно всегда; линия лишь пробегает поверх при смене выбора. */
+
+@keyframes scan-sweep {
+  from {
+    translate: 0 -12%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    translate: 0 100%;
+    opacity: 0;
+  }
+}
+
+.scan {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 38%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, rgb(111 227 198 / 0.14) 85%, var(--color-mint) 99%, transparent);
+  animation: scan-sweep 0.9s var(--ease-out-expo) both;
+}
+
+@keyframes settle {
+  from {
+    filter: blur(3px);
+    opacity: 0.35;
+  }
+  to {
+    filter: none;
+    opacity: 1;
+  }
+}
+
+.settle {
+  animation: settle 0.45s var(--ease-out-expo) both;
+}
+
+/* Стрелка у выпадающих списков в цвет бренда вместо системной. */
+.select {
+  appearance: none;
+  padding-right: 2.75rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%230e4a4f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 8 5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+}
+
+/* ── Аккордеон FAQ на <details> без JS ─────────────────────────────── */
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  rotate: 45deg;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .scan::after,
+  .settle {
+    animation: none;
+  }
+  .scan::after {
+    display: none;
+  }
+}
