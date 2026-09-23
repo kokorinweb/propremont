@@ -116,7 +116,7 @@ export function EstimatePrinter({
 
               <div className="mt-4 border-t-2 border-ink pt-3">
                 <p className="field text-ink-mute">{service ? "Цена от" : "Цена"}</p>
-                <p className="display mt-1 text-[4.25rem] leading-[0.82] whitespace-nowrap sm:text-[4.75rem]">
+                <p className="display mt-1 text-[4.25rem] whitespace-nowrap sm:text-[4.75rem]">
                   {formatPrice(price)}
                 </p>
               </div>

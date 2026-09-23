@@ -39,7 +39,7 @@ export function Process() {
           {STEPS.map((step, index) => (
             <li key={step.title} className="perforated label relative flex flex-col p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
-                <span className="display text-6xl leading-[0.8]" aria-hidden>
+                <span className="display text-6xl" aria-hidden>
                   {index + 1}
                 </span>
                 <span className={`pt-1 text-right text-xs text-ink-mute ${isReading(step.meta) ? "readout" : "font-medium"}`}>

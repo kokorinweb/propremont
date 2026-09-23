@@ -4,8 +4,6 @@ export const button = {
   base: "inline-flex min-h-12 items-center justify-center gap-2 rounded-[10px] px-6 text-[15px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
   primary: "bg-ink text-white hover:bg-ink-soft",
   outline: "border border-ink/70 text-ink hover:bg-ink hover:text-white",
-  light: "bg-white text-ink hover:bg-esd",
-  outlineLight: "border border-night-ink/35 text-night-ink hover:border-night-ink hover:bg-night-ink/5",
 };
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {

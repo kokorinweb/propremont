@@ -11,14 +11,14 @@ const sans = Golos_Text({
 
 const display = Fira_Sans_Extra_Condensed({
   subsets: ["latin", "cyrillic"],
-  weight: ["600", "800"],
+  weight: ["800"],
   variable: "--font-fira-xcond",
   display: "swap",
 });
 
 const mono = Fira_Mono({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "500"],
+  weight: ["400"],
   variable: "--font-fira-mono",
   display: "swap",
 });

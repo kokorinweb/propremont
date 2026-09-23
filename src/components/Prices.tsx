@@ -123,7 +123,7 @@ function ReceiptLine({
         <span className="flex w-full items-baseline gap-2">
           <span className="font-semibold">{title}</span>
           <span aria-hidden className="leader" />
-          <span className="display text-[1.6rem] leading-none whitespace-nowrap">{price}</span>
+          <span className="display text-[1.6rem] whitespace-nowrap">{price}</span>
         </span>
         <span className="flex w-full items-center justify-between gap-3 text-xs">
           <span className="text-ink-mute">

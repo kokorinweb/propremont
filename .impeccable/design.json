@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T07:49:02Z",
+  "title": "Design System: Проремонт",
+  "extensions": {
+    "colorMeta": {
+      "esd": {
+        "role": "primary",
+        "displayName": "Розовый антистатического пакета",
+        "canonical": "#f5a3c0",
+        "tonalRamp": [
+          "#1d000c",
+          "#480326",
+          "#6a2643",
+          "#8e4662",
+          "#b36783",
+          "#d989a6",
+          "#fdafca",
+          "#ffe7ef"
+        ]
+      },
+      "esd-ink": {
+        "role": "primary",
+        "displayName": "Чернила по розовому",
+        "canonical": "#5b2a3c",
+        "tonalRamp": [
+          "#1d000b",
+          "#401225",
+          "#613042",
+          "#844f61",
+          "#a86f82",
+          "#cd92a4",
+          "#f3b5c9",
+          "#ffe7ee"
+        ]
+      },
+      "zip": {
+        "role": "secondary",
+        "displayName": "Красный зиплок",
+        "canonical": "#e0322e",
+        "tonalRamp": [
+          "#1f0000",
+          "#4d0002",
+          "#810007",
+          "#b80311",
+          "#e53833",
+          "#fe7467",
+          "#fdb4aa",
+          "#ffe9e6"
+        ]
+      },
+      "caution": {
+        "role": "tertiary",
+        "displayName": "Жёлтый ESD-стикер",
+        "canonical": "#ffd23f",
+        "tonalRamp": [
+          "#100a00",
+          "#2f2401",
+          "#514004",
+          "#765e0b",
+          "#9d7f14",
+          "#c7a009",
+          "#f1c429",
+          "#ffeebe"
+        ]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Красный ошибки",
+        "canonical": "#b42318",
+        "tonalRamp": [
+          "#1f0000",
+          "#4c0302",
+          "#7e0a04",
+          "#b12015",
+          "#da4a3b",
+          "#ff7462",
+          "#feb4a8",
+          "#ffe9e5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Чернила",
+        "canonical": "#171315",
+        "tonalRamp": [
+          "#0e0a0c",
+          "#282426",
+          "#454043",
+          "#656062",
+          "#868183",
+          "#a9a3a6",
+          "#cdc7ca",
+          "#f3ecef"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Мягкие чернила",
+        "canonical": "#4b4448",
+        "tonalRamp": [
+          "#0f090c",
+          "#292327",
+          "#474044",
+          "#665f63",
+          "#888084",
+          "#aaa2a7",
+          "#cfc6cb",
+          "#f4ecf1"
+        ]
+      },
+      "ink-mute": {
+        "role": "neutral",
+        "displayName": "Приглушённые чернила",
+        "canonical": "#6b6368",
+        "tonalRamp": [
+          "#0f090d",
+          "#292327",
+          "#473f44",
+          "#665f63",
+          "#887f85",
+          "#aba2a7",
+          "#cfc6cc",
+          "#f5ebf1"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Линия",
+        "canonical": "#d8d4d6",
+        "tonalRamp": [
+          "#0d0a0c",
+          "#272426",
+          "#444142",
+          "#636062",
+          "#858183",
+          "#a7a4a6",
+          "#ccc8ca",
+          "#f1edef"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Фон страницы",
+        "canonical": "#eeedef",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252526",
+          "#424243",
+          "#626162",
+          "#838284",
+          "#a5a4a6",
+          "#c9c9ca",
+          "#efeef0"
+        ]
+      },
+      "liner": {
+        "role": "neutral",
+        "displayName": "Подложка рулона",
+        "canonical": "#e2dfe1",
+        "tonalRamp": [
+          "#0c0a0c",
+          "#262426",
+          "#434143",
+          "#636062",
+          "#848183",
+          "#a7a4a6",
+          "#cbc8ca",
+          "#f0edef"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Термобумага",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Ночь",
+        "canonical": "#151114",
+        "tonalRamp": [
+          "#0e0a0d",
+          "#282327",
+          "#454044",
+          "#655f63",
+          "#868084",
+          "#a9a3a7",
+          "#cdc7cb",
+          "#f2ecf1"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Текст ночи",
+        "canonical": "#f4eff2",
+        "tonalRamp": [
+          "#0d0a0c",
+          "#272426",
+          "#454143",
+          "#646062",
+          "#858183",
+          "#a8a3a6",
+          "#ccc7ca",
+          "#f2edf0"
+        ]
+      },
+      "night-soft": {
+        "role": "neutral",
+        "displayName": "Приглушённый текст ночи",
+        "canonical": "#b9aeb4",
+        "tonalRamp": [
+          "#10090d",
+          "#2b2227",
+          "#483f44",
+          "#685e63",
+          "#897f85",
+          "#aca1a7",
+          "#d1c5cc",
+          "#f6ebf1"
+        ]
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Линия ночи",
+        "canonical": "rgb(244 239 242 / 0.14)",
+        "tonalRamp": [
+          "#0d0a0c",
+          "#272426",
+          "#454143",
+          "#646062",
+          "#858183",
+          "#a8a3a6",
+          "#ccc7ca",
+          "#f2edf0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Заголовок первого экрана: 2.65rem → 4.4rem (sm) → 4.2rem (lg) → 4.85rem (xl). Финальный призыв 3.3rem → 4.5rem → 6rem. Прописные, класс .display."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Заголовки секций: 2.75rem → 3.75rem (sm). Прописные, класс .display."
+      },
+      "price": {
+        "displayName": "Price",
+        "purpose": "Цена на этикетке-оценке 4.25rem → 4.75rem (sm), в одну строку; номер заявки, адрес на транспортной этикетке. Цены только через formatPrice() с U+00A0."
+      },
+      "display-sm": {
+        "displayName": "Display small",
+        "purpose": "Шапки этикеток, строки условий, номера шагов: 1.25–1.875rem. Цена в строке прайса 1.6rem."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Заголовки шагов и подразделов (h3)."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Подводки первого экрана и секций с sm; на телефоне 1rem. Ширина до 42rem."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Абзацы и ответы. Отзывы 17px с интерлиньяжем 1.625."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Подписи кнопок. Сегменты 13–14px, чипы 14px."
+      },
+      "field": {
+        "displayName": "Field",
+        "purpose": "Название поля на этикетке или в форме, прописные (класс .field). Только внутри этикетки или формы, никогда надзаголовком."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Показания с цифрами (класс .readout): сроки, гарантии, суммы, часы. Значения, которые могут оказаться словом, проходят через isReading()."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Подпись под штрихкодом Code 128; 10–12px по размеру этикетки."
+      }
+    },
+    "shadows": [
+      {
+        "name": "label",
+        "value": "0 1px 2px rgb(23 19 21 / 0.08), 0 12px 28px -14px rgb(23 19 21 / 0.35)",
+        "purpose": "Единственная тень системы: термоэтикетка лежит на поверхности. Объявлена один раз в классе .label; у этикетки нет рамки."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Кривая печати этикетки (--ease-out-expo в @theme)."
+      },
+      {
+        "name": "feed",
+        "value": "feed 0.75s cubic-bezier(0.16, 1, 0.3, 1) both; translateY(-100%) → none",
+        "purpose": "Единственное сигнатурное движение (.feed): этикетка выезжает из-под губы принтера после выбора посетителя. В покое и при prefers-reduced-motion выключено."
+      },
+      {
+        "name": "state-colors",
+        "value": "200ms cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Смена цвета у кнопок, сегментов, чипов, полей и строк прайса."
+      },
+      {
+        "name": "faq-rotate",
+        "value": "rotate 45deg, 300ms cubic-bezier(0, 0, 0.2, 1)",
+        "purpose": "Плюс в кнопке FAQ поворачивается при раскрытии <details>."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "380px"
+      },
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Основная кнопка",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Чёрный прямоугольник 10px: главное действие («Записаться на ремонт»).",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Записаться на ремонт <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 10px; font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0, 0.2, 1); border: 0; background: var(--color-ink, #171315); color: #fff; } .ds-btn-primary:hover { background: var(--color-ink-soft, #4b4448); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-ink, #171315); outline-offset: 3px; } .ds-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }"
+    },
+    {
+      "name": "Контурная кнопка",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Вторая кнопка рядом с основной («Позвонить», «2ГИС»): рамка ink 70%, наведение заливает чёрным.",
+      "html": "<a href=\"#\" class=\"ds-btn-outline\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"/></svg> Позвонить</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 10px; font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgb(23 19 21 / 0.7); background: transparent; color: var(--color-ink, #171315); } .ds-btn-outline:hover { background: var(--color-ink, #171315); color: #fff; } .ds-btn-outline:focus-visible { outline: 2px solid var(--color-ink, #171315); outline-offset: 3px; }"
+    },
+    {
+      "name": "Выбор телефона (BrandSwitch)",
+      "kind": "input",
+      "refersTo": "segment-selected",
+      "description": "Сегментированный переключатель на радиокнопках: трек 10px, выбранный сегмент чёрный 7px.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\" aria-label=\"Телефон\"><label class=\"ds-seg-item\"><input type=\"radio\" name=\"ds-brand\" checked>Apple</label><label class=\"ds-seg-item\"><input type=\"radio\" name=\"ds-brand\">Samsung</label><label class=\"ds-seg-item\"><input type=\"radio\" name=\"ds-brand\">Xiaomi</label><label class=\"ds-seg-item\"><input type=\"radio\" name=\"ds-brand\">Honor</label><label class=\"ds-seg-item\"><input type=\"radio\" name=\"ds-brand\">Huawei</label></div>",
+      "css": ".ds-seg { display: flex; gap: 4px; max-width: 36rem; padding: 4px; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--color-line, #d8d4d6); overflow-x: auto; scrollbar-width: none; } .ds-seg-item { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 12px; border-radius: 7px; font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 14px; font-weight: 600; white-space: nowrap; color: rgb(23 19 21 / 0.75); cursor: pointer; transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1), background-color 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-seg-item:hover { color: var(--color-ink, #171315); } .ds-seg-item input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; } .ds-seg-item:has(input:checked) { background: var(--color-ink, #171315); color: #fff; } .ds-seg-item:has(input:focus-visible) { outline: 2px solid var(--color-ink, #171315); outline-offset: 1px; }"
+    },
+    {
+      "name": "Чипы поломки",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Мелкие пилюли выбора поломки на розовом поле; выбранная залита чёрным. Пилюля только здесь.",
+      "html": "<div class=\"ds-chips-field\"><fieldset class=\"ds-chips\"><legend class=\"ds-chips-legend\">Что случилось</legend><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-symptom\" checked>Разбит экран</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-symptom\">Быстро садится</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-symptom\">Не заряжается</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-symptom\">Был в воде</label><label class=\"ds-chip\"><input type=\"radio\" name=\"ds-symptom\">Не знаю</label></fieldset></div>",
+      "css": ".ds-chips-field { padding: 20px; background: var(--color-esd, #f5a3c0); } .ds-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; } .ds-chips-legend { font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.3; text-transform: uppercase; margin-bottom: 8px; padding: 0; color: var(--color-esd-ink, #5b2a3c); } .ds-chip { position: relative; display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 9999px; background: rgb(255 255 255 / 0.55); box-shadow: 0 0 0 1px rgb(23 19 21 / 0.1); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 14px; font-weight: 500; color: var(--color-ink, #171315); cursor: pointer; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-chip:hover { background: #fff; } .ds-chip input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; } .ds-chip:has(input:checked) { background: var(--color-ink, #171315); color: #fff; box-shadow: none; } .ds-chip:has(input:focus-visible) { outline: 2px solid var(--color-ink, #171315); outline-offset: 2px; }"
+    },
+    {
+      "name": "Поле ввода",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Белое поле 48px со скруглением 8px; фокус: рамка ink и мягкое розовое кольцо 3px.",
+      "html": "<div class=\"ds-input-wrap\"><label class=\"ds-input-label\" for=\"ds-phone\">Телефон</label><input id=\"ds-phone\" class=\"ds-input\" type=\"tel\" inputmode=\"tel\" placeholder=\"+7 900 000-00-00\"></div>",
+      "css": ".ds-input-wrap { max-width: 22rem; } .ds-input-label { font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.3; text-transform: uppercase; display: block; margin-bottom: 8px; color: var(--color-ink-mute, #6b6368); } .ds-input { box-sizing: border-box; width: 100%; height: 48px; padding: 0 16px; border: 1px solid rgb(23 19 21 / 0.25); border-radius: 8px; background: #fff; color: var(--color-ink, #171315); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 16px; font-variant-numeric: tabular-nums; caret-color: var(--color-ink, #171315); transition: border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-input::placeholder { color: var(--color-ink-mute, #6b6368); } .ds-input:hover { border-color: rgb(23 19 21 / 0.45); } .ds-input:focus { outline: none; border-color: var(--color-ink, #171315); box-shadow: 0 0 0 3px rgb(245 163 192 / 0.6); } .ds-input[aria-invalid=\"true\"] { border-color: var(--color-danger, #b42318); }"
+    },
+    {
+      "name": "Шапка",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Белая закреплённая шапка: знак-бирка, меню Golos 15px, телефон с tabular-nums, компактная основная кнопка.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-logo\" href=\"#\"><svg viewBox=\"0 0 36 36\" width=\"36\" height=\"36\" aria-hidden=\"true\"><rect x=\"2\" y=\"7\" width=\"32\" height=\"22\" rx=\"4\" fill=\"#f5a3c0\"/><circle cx=\"8.5\" cy=\"18\" r=\"2.4\" fill=\"#171315\"/><g fill=\"#171315\"><rect x=\"14\" y=\"12\" width=\"2\" height=\"12\"/><rect x=\"17.5\" y=\"12\" width=\"1\" height=\"12\"/><rect x=\"20\" y=\"12\" width=\"3\" height=\"12\"/><rect x=\"24.5\" y=\"12\" width=\"1\" height=\"12\"/><rect x=\"27\" y=\"12\" width=\"2\" height=\"12\"/></g></svg><span class=\"ds-logo-text\"><span class=\"ds-logo-name\">Проремонт</span><span class=\"ds-logo-sub\">сервисный центр · Владивосток</span></span></a><nav class=\"ds-nav\" aria-label=\"Разделы\"><a href=\"#\">Цены</a><a href=\"#\">Как работаем</a><a href=\"#\">Отзывы</a><a href=\"#\">Вопросы</a><a href=\"#\">Контакты</a></nav><a class=\"ds-header-phone\" href=\"#\"><span class=\"ds-phone\">+7 (423) 000-00-00</span><span class=\"ds-hours\">Ежедневно 09:00–19:00</span></a><a class=\"ds-header-cta\" href=\"#\">Записаться</a></header>",
+      "css": ".ds-header { display: flex; align-items: center; gap: 24px; height: 72px; padding: 0 24px; background: #fff; border-bottom: 1px solid var(--color-line, #d8d4d6); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); color: var(--color-ink, #171315); } .ds-logo { display: flex; align-items: center; gap: 10px; color: var(--color-ink, #171315); text-decoration: none; } .ds-logo-text { display: flex; flex-direction: column; line-height: 1; } .ds-logo-name { font-family: var(--font-display, \"Fira Sans Extra Condensed\", \"Arial Narrow\", sans-serif); font-weight: 800; font-size: 23px; line-height: 0.96; text-transform: uppercase; } .ds-logo-sub { margin-top: 4px; font-size: 11px; font-weight: 500; color: var(--color-ink-mute, #6b6368); } .ds-nav { display: flex; gap: 28px; margin-left: auto; font-size: 15px; } .ds-nav a { color: var(--color-ink-soft, #4b4448); font-weight: 500; text-decoration: none; transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-nav a:hover { color: var(--color-ink, #171315); } .ds-nav a:focus-visible, .ds-logo:focus-visible, .ds-header-phone:focus-visible, .ds-header-cta:focus-visible { outline: 2px solid var(--color-ink, #171315); outline-offset: 3px; } .ds-header-phone { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.25; color: var(--color-ink, #171315); text-decoration: none; } .ds-phone { font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-hours { font-size: 12px; color: var(--color-ink-mute, #6b6368); } .ds-header-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 10px; background: var(--color-ink, #171315); color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-header-cta:hover { background: var(--color-ink-soft, #4b4448); }"
+    },
+    {
+      "name": "Этикетки на подложке рулона",
+      "kind": "card",
+      "refersTo": "thermal-label",
+      "description": "Термоэтикетки 6px с единственной тенью системы на подложке liner 16px, между ними перфорация.",
+      "html": "<ol class=\"ds-liner\"><li class=\"ds-step\"><div class=\"ds-step-top\"><span class=\"ds-step-num\" aria-hidden=\"true\">1</span><span class=\"ds-step-meta ds-readout\">15 мин · 0&nbsp;₽</span></div><h3 class=\"ds-step-title\">Диагностика</h3><p class=\"ds-step-text\">Находим причину поломки. Если откажетесь от ремонта, ничего не платите.</p></li><li class=\"ds-step\"><div class=\"ds-step-top\"><span class=\"ds-step-num\" aria-hidden=\"true\">2</span><span class=\"ds-step-meta ds-step-meta-word\">до начала работ</span></div><h3 class=\"ds-step-title\">Цена в квитанции</h3><p class=\"ds-step-text\">Называем сумму, срок и деталь. Печатаем это в квитанции и начинаем после вашего согласия.</p></li></ol>",
+      "css": ".ds-liner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 14px; list-style: none; border-radius: 16px; background: var(--color-liner, #e2dfe1); } .ds-step { position: relative; display: flex; flex-direction: column; padding: 24px; border-radius: 6px; background: #fff; box-shadow: 0 1px 2px rgb(23 19 21 / 0.08), 0 12px 28px -14px rgb(23 19 21 / 0.35); color: var(--color-ink, #171315); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); } .ds-step:not(:last-child)::after { content: \"\"; position: absolute; top: 12px; bottom: 12px; right: -7px; border-left: 1px dashed rgb(23 19 21 / 0.28); pointer-events: none; } .ds-step-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; } .ds-step-num { font-family: var(--font-display, \"Fira Sans Extra Condensed\", \"Arial Narrow\", sans-serif); font-weight: 800; font-size: 3.75rem; line-height: 0.96; text-transform: uppercase; font-variant-numeric: tabular-nums; } .ds-step-meta { padding-top: 4px; text-align: right; font-size: 12px; color: var(--color-ink-mute, #6b6368); } .ds-step-meta-word { font-weight: 500; } .ds-readout { font-family: var(--font-mono, \"Fira Mono\", ui-monospace, monospace); font-variant-numeric: tabular-nums; } .ds-step-title { margin: 32px 0 0; font-size: 1.25rem; line-height: 1.4; font-weight: 600; letter-spacing: -0.01em; } .ds-step-text { margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: var(--color-ink-soft, #4b4448); }"
+    },
+    {
+      "name": "Принтер этикеток (EstimatePrinter)",
+      "kind": "custom",
+      "refersTo": "thermal-label",
+      "description": "Сигнатура: термопринтер на розовом поле с зиплоком печатает этикетку-оценку с настоящим Code 128. В покое этикетка напечатана; класс is-printing (выезд 0.75s) ставится только в ответ на выбор и выключен при reduced motion.",
+      "html": "<div class=\"ds-zipfield\"><div class=\"ds-printer\"><div class=\"ds-printer-body\" aria-hidden=\"true\"><span class=\"ds-led\"></span><span class=\"ds-slot ds-slot-s\"></span><span class=\"ds-slot ds-slot-l\"></span></div><div class=\"ds-printer-lip\" aria-hidden=\"true\"><span></span></div><div class=\"ds-printer-out\" aria-live=\"polite\"><article class=\"ds-plabel\" aria-label=\"Оценка ремонта\"><header class=\"ds-plabel-head\"><span class=\"ds-plabel-brand\">Проремонт</span><span class=\"ds-pfield\">Оценка ремонта</span></header><dl class=\"ds-pairs\"><dt class=\"ds-pfield\">Телефон</dt><dd>Apple</dd><dt class=\"ds-pfield\">Ремонт</dt><dd>Замена дисплея</dd></dl><div class=\"ds-price-block\"><p class=\"ds-pfield\">Цена от</p><p class=\"ds-price\">4&nbsp;900&nbsp;₽</p></div><dl class=\"ds-readings\"><div><dt class=\"ds-pfield\">Срок</dt><dd class=\"ds-preadout\">от 40 мин</dd></div><div><dt class=\"ds-pfield\">Гарантия</dt><dd class=\"ds-preadout\">до 6 мес.</dd></div><div><dt class=\"ds-pfield\">Диагностика</dt><dd class=\"ds-preadout\">0&nbsp;₽</dd></div></dl><div class=\"ds-plabel-foot\"><div class=\"ds-code\"><svg viewBox=\"0 0 200 40\" width=\"200\" height=\"40\" shape-rendering=\"crispEdges\" role=\"img\" aria-label=\"Штрихкод PR-APL-DSP-4900\" fill=\"currentColor\"><rect x=\"0\" width=\"2\" height=\"40\"/><rect x=\"3\" width=\"1\" height=\"40\"/><rect x=\"6\" width=\"1\" height=\"40\"/><rect x=\"11\" width=\"3\" height=\"40\"/><rect x=\"15\" width=\"3\" height=\"40\"/><rect x=\"19\" width=\"2\" height=\"40\"/><rect x=\"22\" width=\"2\" height=\"40\"/><rect x=\"27\" width=\"1\" height=\"40\"/><rect x=\"29\" width=\"3\" height=\"40\"/><rect x=\"33\" width=\"1\" height=\"40\"/><rect x=\"36\" width=\"2\" height=\"40\"/><rect x=\"39\" width=\"3\" height=\"40\"/><rect x=\"44\" width=\"1\" height=\"40\"/><rect x=\"46\" width=\"1\" height=\"40\"/><rect x=\"50\" width=\"2\" height=\"40\"/><rect x=\"55\" width=\"3\" height=\"40\"/><rect x=\"59\" width=\"3\" height=\"40\"/><rect x=\"63\" width=\"2\" height=\"40\"/><rect x=\"66\" width=\"1\" height=\"40\"/><rect x=\"70\" width=\"2\" height=\"40\"/><rect x=\"73\" width=\"3\" height=\"40\"/><rect x=\"77\" width=\"1\" height=\"40\"/><rect x=\"80\" width=\"2\" height=\"40\"/><rect x=\"83\" width=\"3\" height=\"40\"/><rect x=\"88\" width=\"1\" height=\"40\"/><rect x=\"90\" width=\"2\" height=\"40\"/><rect x=\"95\" width=\"1\" height=\"40\"/><rect x=\"99\" width=\"2\" height=\"40\"/><rect x=\"102\" width=\"3\" height=\"40\"/><rect x=\"106\" width=\"1\" height=\"40\"/><rect x=\"110\" width=\"3\" height=\"40\"/><rect x=\"114\" width=\"3\" height=\"40\"/><rect x=\"118\" width=\"2\" height=\"40\"/><rect x=\"121\" width=\"1\" height=\"40\"/><rect x=\"124\" width=\"2\" height=\"40\"/><rect x=\"127\" width=\"3\" height=\"40\"/><rect x=\"132\" width=\"2\" height=\"40\"/><rect x=\"136\" width=\"1\" height=\"40\"/><rect x=\"139\" width=\"3\" height=\"40\"/><rect x=\"143\" width=\"3\" height=\"40\"/><rect x=\"148\" width=\"1\" height=\"40\"/><rect x=\"150\" width=\"2\" height=\"40\"/><rect x=\"154\" width=\"1\" height=\"40\"/><rect x=\"157\" width=\"3\" height=\"40\"/><rect x=\"161\" width=\"2\" height=\"40\"/><rect x=\"165\" width=\"1\" height=\"40\"/><rect x=\"168\" width=\"3\" height=\"40\"/><rect x=\"172\" width=\"2\" height=\"40\"/><rect x=\"176\" width=\"2\" height=\"40\"/><rect x=\"180\" width=\"3\" height=\"40\"/><rect x=\"185\" width=\"1\" height=\"40\"/><rect x=\"187\" width=\"2\" height=\"40\"/><rect x=\"192\" width=\"3\" height=\"40\"/><rect x=\"196\" width=\"1\" height=\"40\"/><rect x=\"198\" width=\"2\" height=\"40\"/></svg><p class=\"ds-code-caption\">PR-APL-DSP-4900</p></div><p class=\"ds-fix\">Цену фиксируем<br>до начала ремонта</p></div></article></div><button type=\"button\" class=\"ds-printer-cta\">Записаться с этим ремонтом <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></div></div>",
+      "css": ".ds-zipfield { position: relative; padding: 40px 24px 32px; background: var(--color-esd, #f5a3c0); } .ds-zipfield::before { content: \"\"; position: absolute; inset: 14px 0 auto; height: 8px; background: linear-gradient(var(--color-zip, #e0322e) 0 2px, transparent 2px 6px, var(--color-zip, #e0322e) 6px 8px); opacity: 0.85; pointer-events: none; } .ds-printer { max-width: 26rem; margin: 0 auto; font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); color: var(--color-ink, #171315); } .ds-printer-body { position: relative; z-index: 1; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 14px 14px 0 0; background: var(--color-ink, #171315); } .ds-led { width: 8px; height: 8px; border-radius: 9999px; background: var(--color-esd, #f5a3c0); } .ds-slot { height: 6px; border-radius: 9999px; background: rgb(255 255 255 / 0.15); } .ds-slot-s { width: 28px; } .ds-slot-l { width: 48px; margin-left: auto; } .ds-printer-lip { position: relative; z-index: 1; display: flex; align-items: center; height: 16px; margin: 0 -8px; padding: 0 20px; border-radius: 6px; background: #000; } .ds-printer-lip span { width: 100%; height: 3px; border-radius: 9999px; background: rgb(255 255 255 / 0.1); } .ds-printer-out { margin-top: -6px; padding: 0 10px 20px; overflow: hidden; } .ds-plabel { padding: 20px 20px 16px; border-radius: 6px; background: #fff; box-shadow: 0 1px 2px rgb(23 19 21 / 0.08), 0 12px 28px -14px rgb(23 19 21 / 0.35); } .ds-plabel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px dashed rgb(23 19 21 / 0.25); } .ds-plabel-brand { font-family: var(--font-display, \"Fira Sans Extra Condensed\", \"Arial Narrow\", sans-serif); font-weight: 800; font-size: 1.25rem; line-height: 0.96; text-transform: uppercase; } .ds-pfield { font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.3; text-transform: uppercase; margin: 0; color: var(--color-ink-mute, #6b6368); } .ds-pairs { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); row-gap: 6px; margin: 12px 0 0; font-size: 15px; } .ds-pairs dt { align-self: center; } .ds-pairs dd { margin: 0; font-weight: 500; } .ds-price-block { margin-top: 16px; padding-top: 12px; border-top: 2px solid var(--color-ink, #171315); } .ds-price { margin: 4px 0 0; font-family: var(--font-display, \"Fira Sans Extra Condensed\", \"Arial Narrow\", sans-serif); font-weight: 800; font-size: 4.75rem; line-height: 0.96; text-transform: uppercase; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-readings { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; margin: 16px 0 0; padding-top: 12px; border-top: 1px dashed rgb(23 19 21 / 0.25); } .ds-readings dd { margin: 2px 0 0; font-size: 14px; } .ds-preadout { font-family: var(--font-mono, \"Fira Mono\", ui-monospace, monospace); font-variant-numeric: tabular-nums; } .ds-plabel-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: 16px; } .ds-code { min-width: 0; color: var(--color-ink, #171315); } .ds-code svg { display: block; max-width: 100%; } .ds-code-caption { margin: 4px 0 0; font-family: var(--font-mono, \"Fira Mono\", ui-monospace, monospace); font-size: 11px; letter-spacing: 0.12em; } .ds-fix { flex-shrink: 0; margin: 0; text-align: right; font-size: 12px; line-height: 1.25; font-weight: 600; } .ds-printer-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 10px; font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0, 0.2, 1); width: 100%; border: 0; background: var(--color-ink, #171315); color: #fff; } .ds-printer-cta:hover { background: var(--color-ink-soft, #4b4448); } .ds-printer-cta:focus-visible { outline: 2px solid var(--color-ink, #171315); outline-offset: 3px; } @keyframes ds-feed { from { transform: translateY(-100%); } to { transform: none; } } .ds-plabel.is-printing { animation: ds-feed 0.75s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both; } @media (prefers-reduced-motion: reduce) { .ds-plabel.is-printing { animation: none; } }"
+    },
+    {
+      "name": "Строка прайс-чека",
+      "kind": "custom",
+      "refersTo": "receipt-line-hover",
+      "description": "Прайс печатается чеком: название, точечная выноска, цена узким гротеском; строка целиком кнопка записи.",
+      "html": "<div class=\"ds-receipt-paper\"><ul class=\"ds-receipt\"><li><button type=\"button\" class=\"ds-receipt-line\" aria-label=\"Записаться: Замена дисплея, от 4 900 ₽\"><span class=\"ds-receipt-main\"><span class=\"ds-receipt-title\">Замена дисплея</span><span class=\"ds-leader\" aria-hidden=\"true\"></span><span class=\"ds-receipt-price\">от 4&nbsp;900&nbsp;₽</span></span><span class=\"ds-receipt-meta\"><span class=\"ds-receipt-info\"><span class=\"ds-rreadout\">от 40 мин</span> · гарантия <span class=\"ds-rreadout\">до 6 мес.</span></span><span class=\"ds-receipt-book\">Записаться <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></span></button></li><li><button type=\"button\" class=\"ds-receipt-line\" aria-label=\"Записаться: Замена аккумулятора, от 2 900 ₽\"><span class=\"ds-receipt-main\"><span class=\"ds-receipt-title\">Замена аккумулятора</span><span class=\"ds-leader\" aria-hidden=\"true\"></span><span class=\"ds-receipt-price\">от 2&nbsp;900&nbsp;₽</span></span><span class=\"ds-receipt-meta\"><span class=\"ds-receipt-info\"><span class=\"ds-rreadout\">от 30 мин</span> · гарантия <span class=\"ds-rreadout\">6 мес.</span></span><span class=\"ds-receipt-book\">Записаться <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></span></button></li></ul></div>",
+      "css": ".ds-receipt-paper { max-width: 36rem; padding: 28px 32px; border-radius: 6px; background: #fff; box-shadow: 0 1px 2px rgb(23 19 21 / 0.08), 0 12px 28px -14px rgb(23 19 21 / 0.35); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); color: var(--color-ink, #171315); } .ds-receipt { margin: 0; padding: 0; list-style: none; } .ds-receipt-line { display: flex; flex-direction: column; gap: 4px; width: calc(100% + 16px); margin: 0 -8px; padding: 12px 8px; border: 0; border-radius: 6px; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-receipt-line:hover, .ds-receipt-line:focus-visible { background: var(--color-ground, #eeedef); } .ds-receipt-line:focus-visible { outline: 2px solid var(--color-ink, #171315); outline-offset: 3px; } .ds-receipt-main { display: flex; width: 100%; align-items: baseline; gap: 8px; } .ds-receipt-title { font-size: 16px; font-weight: 600; } .ds-leader { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted rgb(23 19 21 / 0.28); transform: translateY(-0.3em); } .ds-receipt-price { font-family: var(--font-display, \"Fira Sans Extra Condensed\", \"Arial Narrow\", sans-serif); font-weight: 800; font-size: 1.6rem; line-height: 0.96; text-transform: uppercase; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-receipt-meta { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; } .ds-receipt-info { color: var(--color-ink-mute, #6b6368); } .ds-rreadout { font-family: var(--font-mono, \"Fira Mono\", ui-monospace, monospace); font-variant-numeric: tabular-nums; } .ds-receipt-book { display: flex; align-items: center; gap: 4px; font-weight: 600; white-space: nowrap; opacity: 0; transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-receipt-line:hover .ds-receipt-book, .ds-receipt-line:focus-visible .ds-receipt-book { opacity: 1; }"
+    },
+    {
+      "name": "Жёлтая плашка предупреждения",
+      "kind": "custom",
+      "refersTo": "caution-plate",
+      "description": "Жёлтый ESD-стикер: только предупреждения (плашка демо-отзывов; демо-полоса без скругления во всю ширину).",
+      "html": "<p class=\"ds-caution\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/></svg>Это демо-отзывы для макета. Перед запуском замените их настоящими.</p>",
+      "css": ".ds-caution { display: flex; align-items: flex-start; gap: 12px; max-width: 42rem; margin: 0; padding: 12px 16px; border-radius: 6px; background: var(--color-caution, #ffd23f); color: var(--color-ink, #171315); font-family: var(--font-sans, \"Golos Text\", system-ui, sans-serif); font-size: 14px; font-weight: 500; line-height: 1.43; } .ds-caution svg { flex-shrink: 0; margin-top: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Запчасть и этикетка",
+    "overview": "Сайт устроен как запчасть в упаковке. Первый и последний экран занимает плоский розовый антистатический пакет во всю ширину, по его верхнему краю идёт двойная красная линия зиплока. Всё, что клиент хочет проверить (цену, срок, гарантию, адрес, номер заявки), печатается на белой термоэтикетке с чёрной печатью. Этикетка лежит на поверхности: скругление 6px, мягкая тень, рамки нет. Эта тень и есть вся глубина системы.\n\nГолос этикетки звучит узким гротеском Fira Sans Extra Condensed 800 прописными, крупно и с цифрами одной ширины. Текст и названия полей набраны Golos Text, показания (сроки, коды, числа) набраны Fira Mono. Плотность спокойная: крупные заголовки, секции по 80–112px, строка текста не шире 42rem. Страница держится на предметах этикеточного мира: штрихкоды Code 128 читаются сканером, прайс печатается чеком с точечными выносками, шаги ремонта лежат на подложке рулона с перфорацией.\n\nПодтверждённые визуальные отказы: шаблон категории (тёмный «техно»-герой, сток-пинцет, синяя и бирюзовая гамма, сетки иконок) и прошлый мир «Диагностика» с его диагностической консолью.",
+    "keyCharacteristics": [
+      "Плоское розовое поле `esd` только на первом и последнем экране, с двойной красной линией `zip`.",
+      "Белые термоэтикетки `.label` несут единственную тень системы.",
+      "Заголовки и цены набраны прописным узким гротеском 800 с интерлиньяжем 0.96.",
+      "Fira Mono достаётся только показаниям с цифрами.",
+      "Штрихкоды настоящие, Code 128, с осмысленными кодами.",
+      "Кнопки: чёрные прямоугольники 10px; пилюли только у мелких чипов.",
+      "Одно сигнатурное движение: этикетка выезжает из принтера."
+    ],
+    "rules": [
+      {
+        "name": "The One Bag Rule",
+        "body": "Розовый `esd` как поле появляется только на первом и последнем экране, плоским и во всю ширину, всегда с линией `.zip` по верхнему краю. Розовых карточек, градиентов и текстур посреди страницы нет.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sticker Rule",
+        "body": "Жёлтый `caution` означает «внимание»: демо-полоса и плашка демо-отзывов. Акцентом, фоном секции или подсветкой цены он не служит.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Field Rule",
+        "body": "Чёрное поле `night` отдано записи и подвалу. Форма лежит на нём белой этикеткой, фокус на тёмном подсвечивается розовым (класс `.on-dark`).",
+        "section": "colors"
+      },
+      {
+        "name": "The Breve Rule",
+        "body": "Интерлиньяж `.display` равен 0.96 и не уплотняется: при меньшем значении бреве «Й» задевает выносной элемент «Д» строкой выше. Класс `.display` объявлен вне каскадных слоёв Tailwind, поэтому утилиты `leading-*` его не перебивают.",
+        "section": "typography"
+      },
+      {
+        "name": "The Field Name Rule",
+        "body": "Название поля (`.field`) живёт только внутри этикетки или формы: над своим значением, как легенда группы выбора или подпись поля ввода. Пара «название поля / значение» внутри этикетки допустима, даже когда значение набрано узким гротеском. Надзаголовком над заголовком секции название поля не ставится.",
+        "section": "typography"
+      },
+      {
+        "name": "The Reading Rule",
+        "body": "Fira Mono (`.readout`) получает только показания с цифрами. Значение, которое может оказаться словом (гарантия «по результату», мета шага «до начала работ»), проходит через `isReading()`. Слова остаются в Golos, телефоны набираются Golos с `tabular-nums`.",
+        "section": "typography"
+      },
+      {
+        "name": "The NBSP Rule",
+        "body": "Цены выводятся только через `formatPrice()`: разряды и знак ₽ отделяются U+00A0. Узкого пробела U+202F в Fira Sans Extra Condensed нет.",
+        "section": "typography"
+      },
+      {
+        "name": "The Plain Copy Rule",
+        "body": "Тексты пишутся по навыку `stop-slop`: без длинного тире в прозе, в действительном залоге, без оборота «не X, а Y». Тире как пустое значение в ячейке этикетки допустимо.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Shadow Rule",
+        "body": "Тень в системе одна и объявлена один раз, в классе `.label`. Белая этикетка несёт тень без рамки. Новый объект либо становится этикеткой и берёт `.label`, либо лежит плоско.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** держите розовое поле `esd` плоским и во всю ширину, только на первом и последнем экране, с двойной линией `.zip` по верхнему краю.",
+      "**Do** выносите проверяемые факты (цену, срок, гарантию, адрес, номер заявки) на белую термоэтикетку `.label`.",
+      "**Do** делайте крупные кнопки чёрными прямоугольниками: `ink`, скругление 10px, высота 48px.",
+      "**Do** набирайте заголовки и цены классом `.display`: Fira Sans Extra Condensed 800 прописными, интерлиньяж 0.96.",
+      "**Do** пропускайте через `isReading()` любое значение, которое может оказаться словом, прежде чем ставить `.readout`; телефоны набирайте Golos с `tabular-nums`.",
+      "**Do** выводите цены только через `formatPrice()`, с разрядами через U+00A0.",
+      "**Do** рисуйте каждый штрихкод компонентом `Barcode` из осмысленного кода.",
+      "**Do** отдавайте чёрное поле `night` записи и подвалу, жёлтый `caution` только предупреждениям.",
+      "**Do** пишите тексты по навыку `stop-slop`: без длинного тире в прозе, в действительном залоге, без «не X, а Y»."
+    ],
+    "donts": [
+      "**Don't** ставьте названия полей `.field` надзаголовками над заголовками секций.",
+      "**Don't** скругляйте крупные кнопки в пилюлю: пилюля остаётся мелким чипам.",
+      "**Don't** добавляйте вторую тень, рамку вокруг этикетки или жёсткую тень со смещением.",
+      "**Don't** уплотняйте интерлиньяж `.display` ниже 0.96.",
+      "**Don't** запускайте печать `.feed` в покое, при `prefers-reduced-motion` или на других объектах.",
+      "**Don't** рисуйте декоративные полоски вместо штрихкода; стилизованные штрихи есть только в знаке логотипа.",
+      "**Don't** ставьте U+202F в ценах.",
+      "**Don't** красьте в `esd` карточки и секции посреди страницы и не делайте `caution` акцентом.",
+      "**Don't** возвращайте шаблон категории (тёмный «техно»-герой, сток-пинцет, синяя и бирюзовая гамма, сетки иконок) и диагностическую консоль прошлого мира «Диагностика»."
+    ]
+  }
+}

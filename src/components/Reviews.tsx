@@ -19,7 +19,7 @@ export function Reviews() {
         <div className="gap-x-10 sm:columns-2 lg:columns-3">
           {REVIEWS.map((review) => (
             <figure key={review.name} className="mb-10 break-inside-avoid border-t-2 border-ink pt-5">
-              <blockquote className="text-[17px] leading-relaxed text-pretty">{review.text}</blockquote>
+              <blockquote className="text-lg leading-relaxed text-pretty">{review.text}</blockquote>
               <figcaption className="mt-4">
                 <p className="font-semibold">{review.name}</p>
                 <p className="mt-0.5 text-sm text-ink-mute">

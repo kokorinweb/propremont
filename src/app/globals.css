@@ -11,7 +11,6 @@
 
   /* Розовый антистатического пакета — поле первого и последнего экрана. */
   --color-esd: #f5a3c0;
-  --color-esd-deep: #ec84a9;
   --color-esd-ink: #5b2a3c;
 
   /* Двойная красная линия зиплока, жёлтый ESD-стикер для предупреждений. */
@@ -223,5 +222,8 @@ details[open] .faq-icon {
   }
   .feed {
     animation: none;
+  }
+  .faq-icon {
+    transition: none;
   }
 }
